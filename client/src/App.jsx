@@ -1,36 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
-
   const sendPostRequest = async (mainAction, data) => {
-	return await fetch(mainAction, {
-		method: 'POST',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	});
-}
-// const btn = document.querySelector('.btn');
-// btn.addEventListener('click', async ()=>{
-//     let resp = await sendPostRequest('/getUsers',{});
-//     console.log(await resp.json());
-// })
-
-// const add = document.querySelector('.add');
-// add.addEventListener('click', async ()=>{
-//     let resp = await sendPostRequest('/addUser',{
-//         id: 2,
-//         name: 'Dayneris',
-//         surname: 'Targaryan',
-//         age: 30
-//     });
-//     console.log(await resp.json());
-// })
+    return await fetch(mainAction, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
   return (
     <div className="App">
       <div>
